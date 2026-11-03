@@ -1,0 +1,32 @@
+﻿Title,Description,Labels,Status,Assignee,Estimate (h),Epic
+"[US-01] 验收标准评审 + 接口契约（POST /api/v1/auth/register）","对齐 Gherkin 场景与 openapi.yaml，产出契约草案",US-01;task;review,To Do,李（SM）,2,US-01
+"[US-01] user 表设计 + 邮箱唯一索引（Flyway V1）","字段：id/email/nickname/password_hash/status/created_at，email 唯一",US-01;task;backend,To Do,王,1,US-01
+"[US-01] 注册接口实现 + 参数校验","校验邮箱格式、密码强度、昵称长度；返回 201 + 用户 ID",US-01;task;backend,To Do,王,3,US-01
+"[US-01] 验证邮件发送适配器（本地 MailHog）","抽象 MailSender 接口，本地实现指向 MailHog SMTP",US-01;task;backend,To Do,王,3,US-01
+"[US-01] 验证令牌签发 / 24h 过期校验","JWT 或随机 token 存库，校验一次性使用",US-01;task;backend,To Do,王,2,US-01
+"[US-01] 注册页表单 + 前端即时校验","邮箱/昵称/密码/确认密码，失焦校验，错误内联提示",US-01;task;frontend,To Do,赵,4,US-01
+"[US-01] 单元测试（邮箱重复/弱密码/过期链接）+ PR 评审","覆盖三类异常路径",US-01;task;test,To Do,陈,2.5,US-01
+"[US-02] JWT 签发与校验中间件 + 2h 过期","含静默续期策略",US-02;task;backend,To Do,王,3,US-02
+"[US-02] 登录 / 登出接口 + 统一错误信息","失败统一返回「邮箱或密码不正确」",US-02;task;backend,To Do,王,2,US-02
+"[US-02] 登录页 + Token 持久化（localStorage）","含记住登录态",US-02;task;frontend,To Do,赵,3,US-02
+"[US-02] 401 拦截与登录后回跳原页","记录 redirect 参数，登录成功后跳回",US-02;task;frontend,To Do,赵,1.5,US-02
+"[US-02] 测试 + PR 评审","覆盖过期 Token 与登出失效",US-02;task;test,To Do,陈,1,US-02
+"[US-03] GET /api/v1/questions?page&size 分页查询","按 created_at 倒序，返回 total 与 items",US-03;task;backend,To Do,陈,3,US-03
+"[US-03] 首页列表 UI（标题/作者/时间/回答数）+ 空状态","列表项组件化，便于复用",US-03;task;frontend,To Do,赵,3,US-03
+"[US-03] 分页组件 + 越界页处理","越界返回空页而非 500",US-03;task;frontend,To Do,赵,2,US-03
+"[US-03] 列表接口契约测试（20 条/页、倒序、越界）","接口级测试",US-03;task;test,To Do,陈,1.5,US-03
+"[US-03] PR 评审","重点看分页参数边界",US-03;task;review,To Do,王,1,US-03
+"[US-04] 需求澄清 + Gherkin 验收标准评审","确认本期不带标签字段",US-04;task;review,To Do,张（PO）,2,US-04
+"[US-04] Question 聚合草图（供 Lab 3 事件风暴复用）","根实体、值对象、不变式、领域事件草案",US-04;task;design,To Do,王,2,US-04
+"[US-04] POST /api/v1/questions + 服务端校验","标题 5-150 字、正文 ≤20000 字，越界返回 400 与字段级错误",US-04;task;backend,To Do,王,5,US-04
+"[US-04] Markdown 编辑器 + 实时预览 + 代码高亮","react-markdown + highlight.js，不自研解析器",US-04;task;frontend,To Do,赵,6,US-04
+"[US-04] 正文 XSS 转义与危险 HTML 白名单清洗","服务端清洗 + 前端渲染禁用 raw HTML",US-04;task;security,To Do,陈,3,US-04
+"[US-04] 表单即时校验（长度、空提交、重复提交防抖）","提交按钮 loading + 防抖",US-04;task;frontend,To Do,赵,2,US-04
+"[US-04] 提交成功后跳转详情页 + 成功提示","跳 /questions/{id}，Toast 提示",US-04;task;frontend,To Do,赵,2,US-04
+"[US-04] 单元测试（校验边界）+ 端到端联调冒烟","覆盖 4/5/6 字标题、20000/20001 字正文",US-04;task;test,To Do,陈,4,US-04
+"[US-04] PR 评审（重点看 XSS 与长度校验）","安全评审清单过一遍",US-04;task;review,To Do,李（SM）,2,US-04
+"[US-05] GET /api/v1/questions/{id} 详情查询","含回答列表占位（空数组）",US-05;task;backend,To Do,陈,3,US-05
+"[US-05] 详情页 UI + 404 友好页","不存在 ID 显示友好提示并可返回列表",US-05;task;frontend,To Do,赵,4,US-05
+"[US-05] 浏览量 +1（异步、不阻塞渲染）","异步更新，避免写放大",US-05;task;backend,To Do,王,1.5,US-05
+"[US-05] 测试 + PR 评审","覆盖 404 路径",US-05;task;test,To Do,李（SM）,2,US-05
+
